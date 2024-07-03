@@ -10,7 +10,7 @@ char getSoundexCode(char c) {
         case 'L': return '4';
         case 'M': case 'N': return '5';
         case 'R': return '6';
-        default: return '0'; 
+        default: return '0';
     }
 }
 
