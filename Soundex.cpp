@@ -28,7 +28,7 @@ std::string generateSoundex(const std::string& name) {
         }
     }
 
-    soundex.resize(4, '0'); // Resize the string to length 4, padding with '0' if necessary
+    soundex.resize(4, '0');
 
     return soundex;
 }
