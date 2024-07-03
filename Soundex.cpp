@@ -10,7 +10,7 @@ char getSoundexCode(char c) {
         case 'L': return '4';
         case 'M': case 'N': return '5';
         case 'R': return '6';
-        default: return '0'; // For vowels and other characters
+        default: return '0'; 
     }
 }
 
@@ -29,7 +29,7 @@ std::string generateSoundex(const std::string& name) {
         }
     }
 
-    soundex.append(4 - soundex.length(), '0');
+    soundex.resize(4, '0'); // Resize the string to length 4, padding with '0' if necessary
 
     return soundex;
 }
