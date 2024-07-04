@@ -1,3 +1,4 @@
+#include "Soundex.h"
 #include <string>
 #include <cctype>
 #include <unordered_map>
@@ -36,11 +37,10 @@ std::string initializeSoundex(const std::string& name, char firstChar) {
 }
 
 std::string processSoundex(const std::string& name, char firstChar) {
-    std::string soundex = initializeSoundex(name, firstChar);
-    char prevCode = soundex.length() > 1 ? soundex[1] : '0';
-
-    // Iterate over the remaining characters of the name
-    for (size_t i = 1; i < name.length() && soundex.length() < 4; ++i) {
+   std::string soundex = initializeSoundex(name, firstChar);
+    char prevCode = soundex[1];
+    for (size_t i = 2; i < name.length() && soundex.length() < 4; ++i) 
+    {
         char code = getSoundexCode(name[i]);
         appendSoundex(soundex, code, prevCode);
     }
